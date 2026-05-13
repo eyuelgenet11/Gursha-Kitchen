@@ -91,7 +91,7 @@ export default function Home() {
       {/* ── Hero ── */}
       <section style={{ height: '100svh', minHeight: '560px', position: 'relative', display: 'flex', alignItems: 'center', justifyContent: 'center', textAlign: 'center', overflow: 'hidden' }}>
         <Image
-          src="/tibbs.webp"
+          src="/mesob.jpg"
           alt="Gursha Kitchen — Authentic Ethiopian Dining"
           fill
           sizes="100vw"
