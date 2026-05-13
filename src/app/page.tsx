@@ -305,7 +305,7 @@ export default function Home() {
             © 2026 Gursha Kitchen. All Rights Reserved.
           </p>
           <div style={{ display: 'flex', gap: '2rem', flexWrap: 'wrap' }}>
-            {['Instagram', 'Facebook', 'TripAdvisor'].map(s => (
+            {['Instagram', 'Facebook', 'TikTok'].map(s => (
               <Link key={s} href="#" style={{ fontSize: '0.7rem', letterSpacing: '0.12em', textTransform: 'uppercase', opacity: 0.6 }}>{s}</Link>
             ))}
           </div>
