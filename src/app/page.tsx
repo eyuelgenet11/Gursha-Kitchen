@@ -4,9 +4,9 @@ import Image from 'next/image';
 import Link from 'next/link';
 
 const featuredItems = [
-  { title: 'Special Doro Wet', category: 'Traditional', price: '450', image: '/tibbs.webp' },
-  { title: 'Gursha Kitfo', category: 'Signature', price: '520', image: '/tibbs.webp' },
-  { title: 'Beyaynetu', category: 'Vegetarian', price: '380', image: '/tibbs.webp' },
+  { title: 'Special Doro Wet', category: 'Traditional', price: '450', image: '/doro.jpg' },
+  { title: 'Gursha Kitfo', category: 'Signature', price: '520', image: '/kitfo.jpg' },
+  { title: 'Beyaynetu', category: 'Vegetarian', price: '380', image: '/beya.jpg' },
 ];
 
 export default function Home() {
