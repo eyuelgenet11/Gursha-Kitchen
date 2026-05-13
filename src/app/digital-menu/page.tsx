@@ -60,7 +60,7 @@ export default function DigitalMenu() {
             <button
               onClick={() => setLang(lang === 'en' ? 'am' : 'en')}
               style={{
-                fontFamily: 'var(--font-body)',
+                fontFamily: 'var(--font-bebas)',
                 fontSize: '0.72rem',
                 fontWeight: 700,
                 letterSpacing: '0.12em',
@@ -115,7 +115,7 @@ export default function DigitalMenu() {
                 revealRefs.current = [];
               }}
               style={{
-                fontFamily: 'var(--font-body)',
+                fontFamily: 'var(--font-bebas)',
                 fontSize: '0.72rem',
                 fontWeight: 700,
                 letterSpacing: '0.18em',
@@ -167,7 +167,7 @@ export default function DigitalMenu() {
                 <p style={{ color: 'var(--text-muted)', fontSize: '0.9rem', lineHeight: 1.8, maxWidth: '500px' }}>{item[lang].description}</p>
               </div>
               <div style={{ textAlign: 'right', display: 'flex', flexDirection: 'column', justifyContent: 'center', flexShrink: 0 }}>
-                <span style={{ fontFamily: 'var(--font-body)', fontSize: '1.1rem', fontWeight: 600 }}>
+                <span style={{ fontFamily: 'var(--font-bebas)', fontSize: '1.1rem', fontWeight: 400 }}>
                   {item.price} <span style={{ fontSize: '0.6rem', opacity: 0.5 }}>ETB</span>
                 </span>
               </div>
@@ -195,7 +195,7 @@ export default function DigitalMenu() {
             </span>
             <h2 style={{ fontFamily: 'var(--font-display)', fontSize: 'clamp(2rem, 8vw, 3.2rem)', marginBottom: '1rem' }}>{selected[lang].title}</h2>
             <p style={{ color: 'var(--text-muted)', marginBottom: '2rem', fontSize: '1rem', lineHeight: 1.9 }}>{selected[lang].description}</p>
-            <div style={{ fontFamily: 'var(--font-body)', fontSize: '1.5rem', fontWeight: 600, marginBottom: '2.5rem' }}>{selected.price} ETB</div>
+            <div style={{ fontFamily: 'var(--font-bebas)', fontSize: '1.5rem', fontWeight: 400, marginBottom: '2.5rem' }}>{selected.price} ETB</div>
             <button className="btn-primary" style={{ padding: '0.9rem 3rem' }} onClick={() => setSelected(null)}>Close</button>
           </div>
         </div>
@@ -206,7 +206,7 @@ export default function DigitalMenu() {
         <div style={{ marginBottom: '1.5rem' }}>
           <Image src="/logo-02.jpg" alt="Logo" width={60} height={60} style={{ opacity: 0.18, borderRadius: '50%', filter: 'grayscale(1)', margin: '0 auto' }} />
         </div>
-        <p style={{ fontFamily: 'var(--font-body)', fontSize: '0.65rem', letterSpacing: '0.3em', textTransform: 'uppercase', opacity: 0.35 }}>Gursha Kitchen Luxury Dining</p>
+        <p style={{ fontFamily: 'var(--font-bebas)', fontSize: '0.65rem', letterSpacing: '0.3em', textTransform: 'uppercase', opacity: 0.35 }}>Gursha Kitchen Luxury Dining</p>
       </footer>
     </div>
   );

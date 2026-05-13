@@ -248,11 +248,11 @@ export default function Home() {
               </p>
               <div style={{ display: 'grid', gap: '1.5rem', marginBottom: '2rem' }}>
                 <div>
-                  <h4 style={{ fontFamily: 'var(--font-body)', fontSize: '0.72rem', textTransform: 'uppercase', letterSpacing: '0.15em', marginBottom: '0.4rem', color: 'var(--text-muted)' }}>Address</h4>
+                  <h4 style={{ fontFamily: 'var(--font-bebas)', fontSize: '0.72rem', textTransform: 'uppercase', letterSpacing: '0.15em', marginBottom: '0.4rem', color: 'var(--text-muted)' }}>Address</h4>
                   <p style={{ fontWeight: 500 }}>Jomo Kenyatta St, Addis Ababa</p>
                 </div>
                 <div>
-                  <h4 style={{ fontFamily: 'var(--font-body)', fontSize: '0.72rem', textTransform: 'uppercase', letterSpacing: '0.15em', marginBottom: '0.4rem', color: 'var(--text-muted)' }}>Valet Parking</h4>
+                  <h4 style={{ fontFamily: 'var(--font-bebas)', fontSize: '0.72rem', textTransform: 'uppercase', letterSpacing: '0.15em', marginBottom: '0.4rem', color: 'var(--text-muted)' }}>Valet Parking</h4>
                   <p>Available daily at the main entrance.</p>
                 </div>
               </div>

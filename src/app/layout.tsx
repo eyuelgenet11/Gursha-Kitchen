@@ -1,30 +1,11 @@
 import type { Metadata, Viewport } from "next";
-import { Inter, Cormorant_Garamond, Noto_Sans_Ethiopic, Bebas_Neue } from 'next/font/google';
+import { Bebas_Neue } from 'next/font/google';
 import "./globals.css";
-
-const inter = Inter({ 
-  subsets: ['latin'], 
-  variable: '--font-inter',
-  display: 'swap',
-});
 
 const bebas = Bebas_Neue({
   weight: ['400'],
   subsets: ['latin'],
   variable: '--font-bebas',
-  display: 'swap',
-});
-
-const cormorant = Cormorant_Garamond({ 
-  subsets: ['latin'], 
-  weight: ['300', '400', '500', '600', '700'],
-  variable: '--font-display',
-  display: 'swap',
-});
-
-const ethiopic = Noto_Sans_Ethiopic({ 
-  subsets: ['ethiopic'], 
-  variable: '--font-ethiopic',
   display: 'swap',
 });
 
@@ -48,7 +29,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" data-scroll-behavior="smooth">
-      <body className={`${inter.variable} ${bebas.variable} ${cormorant.variable} ${ethiopic.variable}`}>
+      <body className={bebas.variable}>
         {children}
       </body>
     </html>

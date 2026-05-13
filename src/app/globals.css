@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Bebas+Neue&family=Noto+Sans+Ethiopic:wght@300;400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
 
 /* ===========================
    DESIGN TOKENS
@@ -32,7 +32,7 @@
   --header-height: 80px;
   --section-gap: 6rem;
 
-  --font-body: var(--font-inter), 'Inter', 'Noto Sans Ethiopic', sans-serif;
+  --font-body: var(--font-bebas), 'Bebas Neue', sans-serif;
   --font-display: var(--font-bebas), 'Bebas Neue', sans-serif;
 
   --radius-sm: 0px;
