@@ -1,10 +1,17 @@
 import type { Metadata, Viewport } from "next";
-import { Inter, Cormorant_Garamond, Noto_Sans_Ethiopic } from 'next/font/google';
+import { Inter, Cormorant_Garamond, Noto_Sans_Ethiopic, Bebas_Neue } from 'next/font/google';
 import "./globals.css";
 
 const inter = Inter({ 
   subsets: ['latin'], 
   variable: '--font-inter',
+  display: 'swap',
+});
+
+const bebas = Bebas_Neue({
+  weight: ['400'],
+  subsets: ['latin'],
+  variable: '--font-bebas',
   display: 'swap',
 });
 
@@ -32,9 +39,6 @@ export const metadata: Metadata = {
   description: "Experience the soul of Ethiopia opposite Hyatt Regency, Addis Ababa. Premium dining and hospitality.",
   keywords: ["Ethiopian Cuisine", "Gursha Kitchen", "Addis Ababa Restaurant", "Hyatt Regency Addis Ababa", "Luxury Dining"],
   authors: [{ name: "Gursha Kitchen Team" }],
-  icons: {
-    icon: "/favicon.ico",
-  },
 };
 
 export default function RootLayout({
@@ -44,7 +48,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" data-scroll-behavior="smooth">
-      <body className={`${inter.variable} ${cormorant.variable} ${ethiopic.variable}`}>
+      <body className={`${inter.variable} ${bebas.variable} ${cormorant.variable} ${ethiopic.variable}`}>
         {children}
       </body>
     </html>

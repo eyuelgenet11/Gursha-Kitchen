@@ -1,111 +1,49 @@
-@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Noto+Sans+Ethiopic:wght@100;300;400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Bebas+Neue&family=Noto+Sans+Ethiopic:wght@300;400;700&display=swap');
 
 /* ===========================
    DESIGN TOKENS
    =========================== */
 :root {
-  /* Hyatt Regency Inspired Palette - Luxury Neutral */
-  --primary: #CB410B;         /* Sinopia (Accents) */
-  --primary-light: #E05A22;
-  --primary-dark: #A13409;
-  --primary-rgb: 203, 65, 11;
+  /* Brand palette (exact) */
+  --primary: #CE3402;         /* Sinopia */
+  --primary-light: #E04A1A;
+  --primary-dark: #A82A01;
+  --primary-rgb: 206, 52, 2;
 
-  --secondary: #134F19;       /* Parsley (Text/Icons) */
-  --secondary-rgb: 19, 79, 25;
+  --secondary: #18542A;       /* Parsley */
+  --secondary-rgb: 24, 84, 42;
 
-  --accent: #FCC01E;          /* Lightning Yellow (Highlights) */
-  
-  /* Luxury Surfaces */
-  --bg-main: #F1EBD9;         /* Spring Wood (Main Background) */
-  --bg-alt: #EBE4CD;
-  --bg-dark: #1A1A1A;         /* Dark sections only */
+  --accent: #F2C91D;          /* Lightning Yellow */
+  --accent-rgb: 242, 201, 29;
 
-  /* Text */
-  --text-main: #134F19;       /* Parsley for readability */
-  --text-muted: rgba(19, 79, 25, 0.6);
-  --text-light: #F1EBD9;      /* For dark sections */
+  --bg-main: #F8F5F0;         /* Spring Wood */
+  --bg-alt: #EEE9DF;
+  --bg-dark: #111810;         /* Very dark green-black */
 
-  /* Borders & Shadows */
-  --border-light: rgba(19, 79, 25, 0.1);
-  --border-gold: rgba(203, 65, 11, 0.2);
-  
-  /* Layout */
+  --text-main: #18542A;       /* Parsley — matches brand identity */
+  --text-muted: rgba(24, 84, 42, 0.55);
+  --text-light: #F8F5F0;
+
+  --border-light: rgba(24, 84, 42, 0.12);
+  --border-gold: rgba(242, 201, 29, 0.35);
+
   --max-width: 1200px;
-  --container-pad: 2rem;
-  --header-height: 140px;
-  --section-gap: 8rem;
+  --container-pad: 1.5rem;
+  --header-height: 80px;
+  --section-gap: 6rem;
 
-  /* Typography */
-  --font-body: var(--font-inter), 'Noto Sans Ethiopic', sans-serif;
-  --font-display: var(--font-display), 'Noto Sans Ethiopic', serif;
+  --font-body: var(--font-inter), 'Inter', 'Noto Sans Ethiopic', sans-serif;
+  --font-display: var(--font-bebas), 'Bebas Neue', sans-serif;
 
-  /* Radius */
-  --radius-sm: 0px;           /* Hyatt uses sharp or very slight corners */
+  --radius-sm: 0px;
   --radius-md: 2px;
   --radius-lg: 4px;
 
-  /* Default theme */
   --background: var(--bg-main);
   --foreground: var(--text-main);
-}
 
-/* ===========================
-   HYATT STYLE REPETITION
-   =========================== */
-.hr-line {
-  height: 1px;
-  width: 100%;
-  background: var(--border-light);
-  position: relative;
-  margin: 4rem 0;
-}
-
-.hr-line::after {
-  content: '';
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 8px;
-  height: 8px;
-  background: var(--primary);
-  border-radius: 50%;
-}
-
-.hr-dot {
-  width: 4px;
-  height: 4px;
-  background: var(--primary);
-  border-radius: 50%;
-  display: inline-block;
-  margin: 0 1rem;
-  vertical-align: middle;
-}
-
-/* ===========================
-   ANIMATIONS
-   =========================== */
-.hyatt-reveal {
-  opacity: 0;
-  transform: translateY(20px);
-  transition: all 1s cubic-bezier(0.215, 0.61, 0.355, 1);
-}
-
-.hyatt-reveal.active {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-.img-zoom-hover {
-  overflow: hidden;
-}
-
-.img-zoom-hover img {
-  transition: transform 1.5s cubic-bezier(0.215, 0.61, 0.355, 1);
-}
-
-.img-zoom-hover:hover img {
-  transform: scale(1.05);
+  --transition-fast: 0.25s ease;
+  --transition-med: 0.4s ease;
 }
 
 /* ===========================
@@ -120,6 +58,7 @@
 html {
   font-size: 16px;
   scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
 }
 
 body {
@@ -128,82 +67,15 @@ body {
   color: var(--foreground);
   line-height: 1.8;
   -webkit-font-smoothing: antialiased;
-}
-
-h1, h2, h3, h4 {
-  font-family: var(--font-display);
-  font-weight: 500;
-  color: var(--text-main);
-  letter-spacing: -0.01em;
-}
-
-/* ===========================
-   HYATT STYLE UTILITIES
-   =========================== */
-.container {
-  width: 100%;
-  max-width: var(--max-width);
-  margin: 0 auto;
-  padding: 0 var(--container-pad);
-}
-
-.section {
-  padding: var(--section-gap) 0;
-}
-
-.eyebrow {
-  font-size: 0.75rem;
-  font-weight: 700;
-  letter-spacing: 0.3em;
-  text-transform: uppercase;
-  color: var(--primary);
-  margin-bottom: 1.5rem;
-  display: block;
-}
-
-.section-title {
-  font-size: clamp(2.5rem, 5vw, 4rem);
-  margin-bottom: 2rem;
-}
-
-.btn-primary {
-  background: var(--secondary);
-  color: var(--bg-main);
-  padding: 1rem 2.5rem;
-  font-size: 0.85rem;
-  font-weight: 600;
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
-  transition: all 0.3s ease;
-  border: 1px solid var(--secondary);
-}
-
-.btn-primary:hover {
-  background: transparent;
-  color: var(--secondary);
-}
-
-.btn-outline {
-  border: 1px solid var(--secondary);
-  color: var(--secondary);
-  padding: 1rem 2.5rem;
-  font-size: 0.85rem;
-  font-weight: 600;
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
-  transition: all 0.3s ease;
-}
-
-.btn-outline:hover {
-  background: var(--secondary);
-  color: var(--bg-main);
+  overflow-x: hidden;
 }
 
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-display);
-  font-weight: 700;
-  line-height: 1.15;
-  letter-spacing: -0.02em;
+  font-weight: 400;
+  line-height: 1.1;
+  letter-spacing: 0.02em;
+  color: var(--text-main);
 }
 
 a {
@@ -254,6 +126,140 @@ input, textarea, select {
 }
 
 /* ===========================
+   HYATT STYLE DECORATIONS
+   =========================== */
+.hr-line {
+  height: 1px;
+  width: 100%;
+  background: var(--border-light);
+  position: relative;
+  margin: 3rem 0;
+}
+
+.hr-line::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 8px;
+  height: 8px;
+  background: var(--primary);
+  border-radius: 50%;
+}
+
+.hr-dot {
+  width: 4px;
+  height: 4px;
+  background: var(--primary);
+  border-radius: 50%;
+  display: inline-block;
+  margin: 0 0.75rem;
+  vertical-align: middle;
+}
+
+/* ===========================
+   ANIMATIONS
+   =========================== */
+.hyatt-reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: all 0.9s cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+
+.hyatt-reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.img-zoom-hover {
+  overflow: hidden;
+}
+
+.img-zoom-hover img {
+  transition: transform 1.5s cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+
+.img-zoom-hover:hover img {
+  transform: scale(1.05);
+}
+
+@keyframes reveal {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.reveal {
+  animation: reveal 1s ease forwards;
+}
+
+/* ===========================
+   TYPOGRAPHY UTILITIES
+   =========================== */
+.eyebrow {
+  font-family: var(--font-body);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--primary);
+  margin-bottom: 1rem;
+  display: block;
+}
+
+.section-title {
+  font-family: var(--font-display);
+  font-size: clamp(2.8rem, 8vw, 5rem);
+  margin-bottom: 1.5rem;
+  line-height: 1.05;
+}
+
+/* ===========================
+   BUTTONS
+   =========================== */
+.btn-primary {
+  display: inline-block;
+  background: var(--secondary);
+  color: var(--bg-main);
+  padding: 0.9rem 2rem;
+  font-family: var(--font-body);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+  border: 1px solid var(--secondary);
+}
+
+.btn-primary:hover {
+  background: transparent;
+  color: var(--secondary);
+}
+
+.btn-outline {
+  display: inline-block;
+  border: 1px solid var(--secondary);
+  color: var(--secondary);
+  padding: 0.9rem 2rem;
+  font-family: var(--font-body);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+}
+
+.btn-outline:hover {
+  background: var(--secondary);
+  color: var(--bg-main);
+}
+
+/* ===========================
    NAVIGATION
    =========================== */
 .nav {
@@ -270,27 +276,147 @@ input, textarea, select {
 }
 
 .nav.scrolled {
-  background: var(--bg-main);
-  height: 80px;
+  background: rgba(241, 235, 217, 0.97);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
   border-bottom: 1px solid var(--border-light);
+  height: 72px;
+}
+
+.nav-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.nav-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  z-index: 1010;
+}
+
+.nav-logo-img {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 2px solid var(--border-light);
+  flex-shrink: 0;
+}
+
+.nav-logo-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.05;
+}
+
+.nav-logo-brand {
+  font-family: var(--font-display);
+  font-size: 1.6rem;
+  font-weight: 400;
+  color: var(--secondary);
+  letter-spacing: 0.05em;
+}
+
+.nav-logo-sub {
+  font-family: var(--font-body);
+  font-size: 0.6rem;
+  color: var(--primary);
+  letter-spacing: 0.4em;
+  font-weight: 700;
+  text-transform: uppercase;
 }
 
 .nav-links {
   display: flex;
-  gap: 3rem;
+  gap: 2.5rem;
   align-items: center;
 }
 
 .nav-link {
-  font-size: 0.8rem;
+  font-family: var(--font-body);
+  font-size: 0.78rem;
   font-weight: 600;
-  letter-spacing: 0.15em;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
   color: var(--text-main);
+  transition: color 0.2s ease;
+}
+
+.nav-link:hover {
+  color: var(--primary);
+}
+
+/* Hamburger */
+.nav-hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  z-index: 1010;
+  padding: 4px;
+}
+
+.nav-hamburger span {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: var(--text-main);
+  transition: all 0.3s ease;
+  transform-origin: center;
+}
+
+.nav-hamburger.open span:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+
+.nav-hamburger.open span:nth-child(2) {
+  opacity: 0;
+}
+
+.nav-hamburger.open span:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+/* Mobile menu drawer */
+.nav-mobile-menu {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: var(--bg-main);
+  z-index: 999;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2.5rem;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.35s ease;
+}
+
+.nav-mobile-menu.open {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.nav-mobile-menu a {
+  font-family: var(--font-display);
+  font-size: 3rem;
+  color: var(--text-main);
+  letter-spacing: 0.05em;
+}
+
+.nav-mobile-menu a:hover {
+  color: var(--primary);
 }
 
 /* ===========================
-   COMPONENTS
+   CARD COMPONENTS
    =========================== */
 .luxury-card {
   border-bottom: 1px solid var(--border-light);
@@ -312,20 +438,83 @@ input, textarea, select {
 }
 
 /* ===========================
-   ANIMATIONS
+   RESPONSIVE GRID UTILITIES
    =========================== */
-@keyframes reveal {
-  from { opacity: 0; transform: translateY(30px); }
-  to { opacity: 1; transform: translateY(0); }
+.grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
 }
 
-.reveal {
-  animation: reveal 1s ease forwards;
+.grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3rem;
 }
 
-@media (max-width: 768px) {
-  .nav-links { display: none; }
-  .luxury-card { grid-template-columns: 1fr; gap: 1.5rem; }
-  .section-title { font-size: 2.5rem; }
+/* ===========================
+   MOBILE RESPONSIVE
+   =========================== */
+@media (max-width: 900px) {
+  :root {
+    --section-gap: 4rem;
+    --container-pad: 1.25rem;
+    --header-height: 72px;
+  }
+
+  /* Nav */
+  .nav-links {
+    display: none;
+  }
+
+  .nav-hamburger {
+    display: flex;
+  }
+
+  .nav-mobile-menu {
+    display: flex;
+  }
+
+  /* Grids */
+  .grid-2 {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .grid-3 {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  /* Luxury card */
+  .luxury-card {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    padding: 2rem 0;
+  }
+
+  /* Section titles */
+  .section-title {
+    font-size: clamp(2.2rem, 10vw, 3.5rem);
+  }
 }
 
+@media (max-width: 600px) {
+  :root {
+    --section-gap: 3rem;
+    --container-pad: 1rem;
+  }
+
+  .btn-primary,
+  .btn-outline {
+    padding: 0.8rem 1.5rem;
+    font-size: 0.72rem;
+    width: 100%;
+    text-align: center;
+  }
+
+  .hr-line {
+    margin: 2rem 0;
+  }
+}
