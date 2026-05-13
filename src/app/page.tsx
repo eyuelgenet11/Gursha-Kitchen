@@ -4,7 +4,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 
 const featuredItems = [
-  { title: 'Special Doro Wat', category: 'Traditional', price: '450', image: '/tibbs.webp' },
+  { title: 'Special Doro Wet', category: 'Traditional', price: '450', image: '/tibbs.webp' },
   { title: 'Gursha Kitfo', category: 'Signature', price: '520', image: '/tibbs.webp' },
   { title: 'Beyaynetu', category: 'Vegetarian', price: '380', image: '/tibbs.webp' },
 ];
@@ -51,7 +51,7 @@ export default function Home() {
         <Link href="/about" onClick={() => setMenuOpen(false)} style={{ fontFamily: 'var(--font-display)', fontSize: '3rem', letterSpacing: '0.05em', color: 'var(--text-main)' }}>The Story</Link>
         <Link href="/digital-menu" onClick={() => setMenuOpen(false)} style={{ fontFamily: 'var(--font-display)', fontSize: '3rem', letterSpacing: '0.05em', color: 'var(--text-main)' }}>Menu</Link>
         <Link href="#contact" onClick={() => setMenuOpen(false)} style={{ fontFamily: 'var(--font-display)', fontSize: '3rem', letterSpacing: '0.05em', color: 'var(--text-main)' }}>Contact</Link>
-        <Link href="/digital-menu" onClick={() => setMenuOpen(false)} className="btn-primary" style={{ fontSize: '0.8rem', marginTop: '1rem' }}>Reserve Table</Link>
+
       </nav>
 
       {/* ── Navigation ── */}
@@ -72,7 +72,7 @@ export default function Home() {
             <Link href="/about" className="nav-link">The Story</Link>
             <Link href="/digital-menu" className="nav-link">Menu</Link>
             <Link href="#contact" className="nav-link">Contact</Link>
-            <Link href="/digital-menu" className="btn-primary" style={{ padding: '0.65rem 1.4rem' }}>Reserve Table</Link>
+
           </div>
 
           {/* Hamburger */}

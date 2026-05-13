@@ -25,7 +25,7 @@ export default function About() {
         <Link href="/" onClick={() => setMenuOpen(false)} style={{ fontFamily: 'var(--font-display)', fontSize: '3rem' }}>Home</Link>
         <Link href="/about" onClick={() => setMenuOpen(false)} style={{ fontFamily: 'var(--font-display)', fontSize: '3rem' }}>The Story</Link>
         <Link href="/digital-menu" onClick={() => setMenuOpen(false)} style={{ fontFamily: 'var(--font-display)', fontSize: '3rem' }}>Menu</Link>
-        <Link href="/digital-menu" onClick={() => setMenuOpen(false)} className="btn-primary" style={{ fontSize: '0.8rem', marginTop: '1rem' }}>Reserve</Link>
+
       </nav>
 
       {/* Nav */}
@@ -43,7 +43,7 @@ export default function About() {
           <div className="nav-links">
             <Link href="/" className="nav-link">Home</Link>
             <Link href="/digital-menu" className="nav-link">Menu</Link>
-            <Link href="/digital-menu" className="btn-primary" style={{ padding: '0.65rem 1.4rem' }}>Reserve</Link>
+
           </div>
           <button
             className={`nav-hamburger ${menuOpen ? 'open' : ''}`}

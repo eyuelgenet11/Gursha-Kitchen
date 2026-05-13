@@ -53,7 +53,7 @@ export const menuData: MenuItem[] = [
     category: 'salad',
     price: '0.00',
     image: '/tibbs.webp',
-    en: { title: 'Caesar Salad', description: 'Classic Caesar salad' },
+    en: { title: 'Caesar Salad', description: 'Classic Caesar Salad' },
     am: { title: 'ሴዛር ሰላጣ', description: 'ሴዛር ሰላጣ' }
   },
   {
@@ -171,7 +171,7 @@ export const menuData: MenuItem[] = [
     category: 'burgers',
     price: '0.00',
     image: '/mitmita-burger.png',
-    en: { title: 'Home special', description: 'Our signature house special burger' },
+    en: { title: 'Home Special', description: 'Our signature House Special Burger' },
     am: { title: 'ሆም ስፔሻል በርገር', description: 'የቤታችን ልዩ በርገር' }
   },
 
@@ -213,7 +213,7 @@ export const menuData: MenuItem[] = [
     category: 'breakfast',
     price: '0.00',
     image: '/tibbs.webp',
-    en: { title: 'Normal Foul', description: 'Foul with tomato, onion' },
+    en: { title: 'Normal Foul', description: 'Foul with Tomato and Onion' },
     am: { title: 'ኖርማል ፉል', description: 'ፉል በቲማቲም እና ሽንኩርት' }
   },
   {
@@ -221,7 +221,7 @@ export const menuData: MenuItem[] = [
     category: 'breakfast',
     price: '0.00',
     image: '/tibbs.webp',
-    en: { title: 'Special Foul', description: 'Foul with tomato, onion, egg' },
+    en: { title: 'Special Foul', description: 'Foul with Tomato, Onion, and Egg' },
     am: { title: 'ስፔሻል ፉል', description: 'ፉል በቲማቲም፣ ሽንኩርት እና እንቁላል' }
   },
 
