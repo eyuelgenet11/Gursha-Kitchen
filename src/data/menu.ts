@@ -28,7 +28,7 @@ export const menuData: MenuItem[] = [
     id: 'greek-salad',
     category: 'salad',
     price: '0.00',
-    image: '/tibbs.webp',
+    image: '/greek.webp',
     en: { title: 'Greek Salad', description: 'Lettuce, tomato, onion, Kalamata olives, feta cheese' },
     am: { title: 'ግሪክ ሰላጣ', description: 'ሰላጣ፣ ቲማቲም፣ ቀይ ሽንኩርት፣ የወይራ ፍሬ፣ ፌታ አይብ' }
   },
@@ -36,7 +36,7 @@ export const menuData: MenuItem[] = [
     id: 'garden-salad',
     category: 'salad',
     price: '0.00',
-    image: '/tibbs.webp',
+    image: '/green.jpg',
     en: { title: 'Garden Salad', description: 'Lettuce, tomato, onion, shaved carrot, cucumber' },
     am: { title: 'ጋርደን ሰላጣ', description: 'ሰላጣ፣ ቲማቲም፣ ቀይ ሽንኩርት፣ ካሮት፣ ዱባ' }
   },
@@ -44,7 +44,7 @@ export const menuData: MenuItem[] = [
     id: 'mixed-salad',
     category: 'salad',
     price: '0.00',
-    image: '/tibbs.webp',
+    image: '/mixed.jpg',
     en: { title: 'Mixed Salad', description: 'Fresh mixed garden vegetables' },
     am: { title: 'ሚክስድ ሰላጣ', description: 'የተቀላቀሉ አትክልቶች' }
   },
@@ -52,7 +52,7 @@ export const menuData: MenuItem[] = [
     id: 'caesar-salad',
     category: 'salad',
     price: '0.00',
-    image: '/tibbs.webp',
+    image: '/caesar.jpg',
     en: { title: 'Caesar Salad', description: 'Classic Caesar Salad' },
     am: { title: 'ሴዛር ሰላጣ', description: 'ሴዛር ሰላጣ' }
   },
@@ -78,7 +78,7 @@ export const menuData: MenuItem[] = [
     id: 'beef-steak',
     category: 'main',
     price: '0.00',
-    image: '/tibbs.webp',
+    image: '/beef.avif',
     en: { title: 'Beef Steak', description: 'Premium grilled beef steak' },
     am: { title: 'ቢፍ ስቴክ', description: 'ጥሩ ጥራት ያለው የበሬ ስቴክ' }
   },
@@ -86,7 +86,7 @@ export const menuData: MenuItem[] = [
     id: 'grilled-fish',
     category: 'main',
     price: '0.00',
-    image: '/tibbs.webp',
+    image: '/grilled fish.jpeg',
     en: { title: 'Grilled Fish', description: 'Freshly grilled seasonal fish' },
     am: { title: 'የተጠበሰ ዓሣ', description: 'በጥንቃቄ የተጠበሰ ዓሣ' }
   },
@@ -94,7 +94,7 @@ export const menuData: MenuItem[] = [
     id: 'grilled-chicken',
     category: 'main',
     price: '0.00',
-    image: '/tibbs.webp',
+    image: '/grilled chicken.webp',
     en: { title: 'Grilled Chicken', description: 'Succulent grilled chicken' },
     am: { title: 'የተጠበሰ ዶሮ', description: 'በጥንቃቄ የተጠበሰ ዶሮ' }
   },
@@ -104,7 +104,7 @@ export const menuData: MenuItem[] = [
     id: 'pasta-tomato',
     category: 'pasta',
     price: '0.00',
-    image: '/tibbs.webp',
+    image: '/spaghetti.jpg',
     en: { title: 'Spaghetti / Penne / Tagliatelle with Tomato Sauce', description: 'Pasta with fresh tomato sauce' },
     am: { title: 'ፓስታ በቲማቲም ሶስ', description: 'ፓስታ በቲማቲም ሶስ' }
   },
@@ -112,7 +112,7 @@ export const menuData: MenuItem[] = [
     id: 'pasta-bolognese',
     category: 'pasta',
     price: '0.00',
-    image: '/tibbs.webp',
+    image: '/spaghetti bolognese.jpg',
     en: { title: 'Spaghetti / Penne / Tagliatelle Bolognese Sauce', description: 'Pasta with rich meat sauce' },
     am: { title: 'ፓስታ በቦሎኔዝ ሶስ', description: 'ፓስታ በስጋ ሶስ' }
   },
@@ -154,7 +154,7 @@ export const menuData: MenuItem[] = [
     id: 'beef-burger',
     category: 'burgers',
     price: '0.00',
-    image: '/mitmita-burger.png',
+    image: '/beef burgur.jpg',
     en: { title: 'Beef Burger', description: 'With lettuce, tomato, grilled onion. Side French Fries' },
     am: { title: 'ቢፍ በርገር', description: 'ሰላጣ፣ ቲማቲም፣ የተጠበሰ ሽንኩርት። ከቺፕስ ጋር' }
   },
@@ -162,7 +162,7 @@ export const menuData: MenuItem[] = [
     id: 'cheeseburger',
     category: 'burgers',
     price: '0.00',
-    image: '/mitmita-burger.png',
+    image: '/cheese burger.jpg',
     en: { title: 'Cheeseburger', description: 'With lettuce, tomato, cheese, grilled onion. Side French Fries' },
     am: { title: 'ቺዝ በርገር', description: 'ሰላጣ፣ ቲማቲም፣ አይብ፣ የተጠበሰ ሽንኩርት። ከቺፕስ ጋር' }
   },
@@ -180,7 +180,7 @@ export const menuData: MenuItem[] = [
     id: 'plain-omelet',
     category: 'breakfast',
     price: '0.00',
-    image: '/tibbs.webp',
+    image: '/bread omelette.jpg',
     en: { title: 'Plain omelet with toast bread', description: 'Simple fluffy omelet' },
     am: { title: 'ፕሌይን ኦምሌት', description: 'ኦምሌት በቶስት ዳቦ' }
   },
@@ -188,7 +188,7 @@ export const menuData: MenuItem[] = [
     id: 'omelet-cheese',
     category: 'breakfast',
     price: '0.00',
-    image: '/tibbs.webp',
+    image: '/cheese omelette.jpg',
     en: { title: 'Omelet with cheese', description: 'Omelet filled with melted cheese' },
     am: { title: 'ኦምሌት በአይብ', description: 'ኦምሌት በአይብ' }
   },
@@ -196,7 +196,7 @@ export const menuData: MenuItem[] = [
     id: 'egg-veg',
     category: 'breakfast',
     price: '0.00',
-    image: '/tibbs.webp',
+    image: '/egg veg.jpg',
     en: { title: 'Egg with vegetable', description: 'Scrambled eggs with fresh vegetables' },
     am: { title: 'እንቁላል በአትክልት', description: 'እንቁላል በአትክልት' }
   },
@@ -246,7 +246,7 @@ export const menuData: MenuItem[] = [
     id: 'shiro',
     category: 'lunch',
     price: '0.00',
-    image: '/tibbs.webp',
+    image: '/shiro.avif',
     en: { title: 'Shiro', description: 'With tomato salad' },
     am: { title: 'ሽሮ', description: 'ሽሮ ከቲማቲም ሰላጣ ጋር' }
   },
