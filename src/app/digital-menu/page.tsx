@@ -66,13 +66,20 @@ export default function DigitalMenu() {
                 letterSpacing: '0.12em',
                 textTransform: 'uppercase',
                 padding: '0.6rem 1.1rem',
-                border: '1px solid var(--border-light)',
+                color: 'var(--secondary)',
+                border: '1px solid var(--secondary)',
                 transition: 'all 0.3s ease',
                 background: 'transparent',
                 cursor: 'pointer',
               }}
-              onMouseOver={e => e.currentTarget.style.borderColor = 'var(--primary)'}
-              onMouseOut={e => e.currentTarget.style.borderColor = 'var(--border-light)'}
+              onMouseOver={e => {
+                e.currentTarget.style.background = 'var(--secondary)';
+                e.currentTarget.style.color = 'var(--bg-main)';
+              }}
+              onMouseOut={e => {
+                e.currentTarget.style.background = 'transparent';
+                e.currentTarget.style.color = 'var(--secondary)';
+              }}
             >
               {lang === 'en' ? 'አማርኛ' : 'English'}
             </button>
@@ -167,8 +174,8 @@ export default function DigitalMenu() {
                 <p style={{ color: 'var(--text-muted)', fontSize: '0.9rem', lineHeight: 1.8, maxWidth: '500px' }}>{item[lang].description}</p>
               </div>
               <div style={{ textAlign: 'right', display: 'flex', flexDirection: 'column', justifyContent: 'center', flexShrink: 0 }}>
-                <span style={{ fontFamily: 'var(--font-bebas)', fontSize: '1.1rem', fontWeight: 400 }}>
-                  {item.price} <span style={{ fontSize: '0.6rem', opacity: 0.5 }}>ETB</span>
+                <span style={{ fontFamily: 'var(--font-bebas)', fontSize: '1.2rem', color: 'var(--secondary)' }}>
+                  $
                 </span>
               </div>
             </div>
@@ -195,7 +202,7 @@ export default function DigitalMenu() {
             </span>
             <h2 style={{ fontFamily: 'var(--font-display)', fontSize: 'clamp(2rem, 8vw, 3.2rem)', marginBottom: '1rem' }}>{selected[lang].title}</h2>
             <p style={{ color: 'var(--text-muted)', marginBottom: '2rem', fontSize: '1rem', lineHeight: 1.9 }}>{selected[lang].description}</p>
-            <div style={{ fontFamily: 'var(--font-bebas)', fontSize: '1.5rem', fontWeight: 400, marginBottom: '2.5rem' }}>{selected.price} ETB</div>
+            <div style={{ fontFamily: 'var(--font-bebas)', fontSize: '1.5rem', color: 'var(--secondary)', marginBottom: '2.5rem' }}>$</div>
             <button className="btn-primary" style={{ padding: '0.9rem 3rem' }} onClick={() => setSelected(null)}>Close</button>
           </div>
         </div>

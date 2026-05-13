@@ -166,7 +166,7 @@ export default function Home() {
                     A masterpiece of flavor and tradition, prepared with our signature spice blends and commitment to excellence.
                   </p>
                   <div style={{ display: 'flex', alignItems: 'center', gap: '2rem', flexWrap: 'wrap' }}>
-                    <span style={{ fontSize: '1.2rem', fontWeight: 600 }}>{item.price} ETB</span>
+                    <span style={{ fontSize: '1.2rem', color: 'var(--secondary)', fontFamily: 'var(--font-bebas)' }}>$</span>
                     <Link href="/digital-menu" className="btn-outline" style={{ padding: '0.6rem 1.5rem', fontSize: '0.72rem' }}>View Details</Link>
                   </div>
                 </div>

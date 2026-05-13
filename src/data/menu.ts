@@ -45,23 +45,23 @@ export const menuData: MenuItem[] = [
     category: 'salad',
     price: '0.00',
     image: '/tibbs.webp',
-    en: { title: 'Mixed salad', description: 'Fresh mixed garden vegetables' },
+    en: { title: 'Mixed Salad', description: 'Fresh mixed garden vegetables' },
     am: { title: 'ሚክስድ ሰላጣ', description: 'የተቀላቀሉ አትክልቶች' }
   },
   {
-    id: 'sesar-salad',
+    id: 'caesar-salad',
     category: 'salad',
     price: '0.00',
     image: '/tibbs.webp',
-    en: { title: 'Sesar salad', description: 'Classic Caesar salad' },
+    en: { title: 'Caesar Salad', description: 'Classic Caesar salad' },
     am: { title: 'ሴዛር ሰላጣ', description: 'ሴዛር ሰላጣ' }
   },
   {
-    id: 'checken-salad',
+    id: 'chicken-salad',
     category: 'salad',
     price: '0.00',
     image: '/tibbs.webp',
-    en: { title: 'Checken salad', description: 'Grilled chicken with fresh greens' },
+    en: { title: 'Chicken Salad', description: 'Grilled chicken with fresh greens' },
     am: { title: 'የዶሮ ሰላጣ', description: 'በጥብስ ዶሮ የተዘጋጀ ሰላጣ' }
   },
   {
@@ -79,7 +79,7 @@ export const menuData: MenuItem[] = [
     category: 'main',
     price: '0.00',
     image: '/tibbs.webp',
-    en: { title: 'Beef steak', description: 'Premium grilled beef steak' },
+    en: { title: 'Beef Steak', description: 'Premium grilled beef steak' },
     am: { title: 'ቢፍ ስቴክ', description: 'ጥሩ ጥራት ያለው የበሬ ስቴክ' }
   },
   {
@@ -87,7 +87,7 @@ export const menuData: MenuItem[] = [
     category: 'main',
     price: '0.00',
     image: '/tibbs.webp',
-    en: { title: 'Grilled fish', description: 'Freshly grilled seasonal fish' },
+    en: { title: 'Grilled Fish', description: 'Freshly grilled seasonal fish' },
     am: { title: 'የተጠበሰ ዓሣ', description: 'በጥንቃቄ የተጠበሰ ዓሣ' }
   },
   {
@@ -95,7 +95,7 @@ export const menuData: MenuItem[] = [
     category: 'main',
     price: '0.00',
     image: '/tibbs.webp',
-    en: { title: 'Grilled chicken', description: 'Succulent grilled chicken' },
+    en: { title: 'Grilled Chicken', description: 'Succulent grilled chicken' },
     am: { title: 'የተጠበሰ ዶሮ', description: 'በጥንቃቄ የተጠበሰ ዶሮ' }
   },
 
