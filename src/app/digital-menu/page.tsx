@@ -2,7 +2,7 @@
 import { useState, useMemo, useEffect, useRef } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { menuData, menuCategories, MenuItem } from '@/data/menu';
+import { MenuItem } from '@/data/menu';
 
 export default function DigitalMenu() {
   const [activeCategory, setActiveCategory] = useState('salad');
@@ -10,6 +10,26 @@ export default function DigitalMenu() {
   const [selected, setSelected] = useState<MenuItem | null>(null);
   const [menuOpen, setMenuOpen] = useState(false);
   const revealRefs = useRef<HTMLDivElement[]>([]);
+  
+  const [menuData, setMenuData] = useState<MenuItem[]>([]);
+  const [categories, setCategories] = useState<{id: string, en: string, am: string}[]>([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    fetch('/api/menu')
+      .then(res => res.json())
+      .then(data => {
+        if (data.error) console.error('API Error:', data.error);
+        const fetchedItems = data.items || [];
+        const fetchedCats = data.categories || [];
+        setMenuData(fetchedItems);
+        setCategories(fetchedCats);
+        if (fetchedCats.length > 0) {
+          setActiveCategory(fetchedCats[0].id);
+        }
+        setLoading(false);
+      });
+  }, []);
 
   useEffect(() => {
     const observer = new IntersectionObserver((entries) => {
@@ -20,7 +40,7 @@ export default function DigitalMenu() {
 
     revealRefs.current.forEach(ref => ref && observer.observe(ref));
     return () => observer.disconnect();
-  }, [activeCategory]);
+  }, [activeCategory, loading]);
 
   useEffect(() => {
     document.body.style.overflow = (menuOpen || selected !== null) ? 'hidden' : '';
@@ -31,7 +51,9 @@ export default function DigitalMenu() {
     if (el && !revealRefs.current.includes(el)) revealRefs.current.push(el);
   };
 
-  const filtered = useMemo(() => menuData.filter(i => i.category === activeCategory), [activeCategory]);
+  const filtered = useMemo(() => menuData.filter(i => i.category === activeCategory), [activeCategory, menuData]);
+
+  if (loading) return <div style={{ minHeight: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center', background: 'var(--bg-main)' }}>Loading Menu...</div>;
 
   return (
     <div style={{ background: 'var(--bg-main)', minHeight: '100vh', color: 'var(--text-main)' }}>
@@ -39,7 +61,7 @@ export default function DigitalMenu() {
       {/* Mobile Drawer */}
       <nav className={`nav-mobile-menu ${menuOpen ? 'open' : ''}`}>
         <Link href="/" onClick={() => setMenuOpen(false)} style={{ fontFamily: 'var(--font-display)', fontSize: '3rem' }}>Home</Link>
-        <Link href="/about" onClick={() => setMenuOpen(false)} style={{ fontFamily: 'var(--font-display)', fontSize: '3rem' }}>The Story</Link>
+        <Link href="/about" onClick={() => setMenuOpen(false)} style={{ fontFamily: 'var(--font-display)', fontSize: '3rem' }}>Services</Link>
         <Link href="/digital-menu" onClick={() => setMenuOpen(false)} style={{ fontFamily: 'var(--font-display)', fontSize: '3rem' }}>Menu</Link>
       </nav>
 
@@ -114,7 +136,7 @@ export default function DigitalMenu() {
           msOverflowStyle: 'none',
           scrollbarWidth: 'none',
         }}>
-          {menuCategories.map(cat => (
+          {categories.map(cat => (
             <button
               key={cat.id}
               onClick={() => {
@@ -149,37 +171,41 @@ export default function DigitalMenu() {
 
         {/* Menu Items */}
         <div style={{ maxWidth: '800px', margin: '0 auto', display: 'grid', gap: '0' }}>
-          {filtered.map((item, i) => (
-            <div
-              key={`${item.id}-${i}`}
-              ref={addToRefs}
-              className="hyatt-reveal"
-              style={{
-                display: 'grid',
-                gridTemplateColumns: '1fr auto',
-                gap: '1.5rem',
-                paddingTop: '2.5rem',
-                paddingBottom: '2.5rem',
-                borderBottom: '1px solid var(--border-light)',
-                cursor: 'pointer',
-                transition: 'background 0.2s ease',
-                borderRadius: 0,
-              }}
-              onClick={() => setSelected(item)}
-              onMouseOver={e => (e.currentTarget.style.background = 'rgba(203,65,11,0.03)')}
-              onMouseOut={e => (e.currentTarget.style.background = 'transparent')}
-            >
-              <div>
-                <h3 style={{ fontFamily: 'var(--font-display)', fontSize: 'clamp(1.4rem, 4vw, 1.9rem)', marginBottom: '0.5rem', lineHeight: 1.1 }}>{item[lang].title}</h3>
-                <p style={{ color: 'var(--text-muted)', fontSize: '0.9rem', lineHeight: 1.8, maxWidth: '500px' }}>{item[lang].description}</p>
+          {filtered.length === 0 ? (
+            <p style={{ textAlign: 'center', color: 'var(--text-muted)', padding: '2rem' }}>No items in this category yet.</p>
+          ) : (
+            filtered.map((item, i) => (
+              <div
+                key={`${item.id}-${i}`}
+                ref={addToRefs}
+                className="hyatt-reveal"
+                style={{
+                  display: 'grid',
+                  gridTemplateColumns: '1fr auto',
+                  gap: '1.5rem',
+                  paddingTop: '2.5rem',
+                  paddingBottom: '2.5rem',
+                  borderBottom: '1px solid var(--border-light)',
+                  cursor: 'pointer',
+                  transition: 'background 0.2s ease',
+                  borderRadius: 0,
+                }}
+                onClick={() => setSelected(item)}
+                onMouseOver={e => (e.currentTarget.style.background = 'rgba(203,65,11,0.03)')}
+                onMouseOut={e => (e.currentTarget.style.background = 'transparent')}
+              >
+                <div>
+                  <h3 style={{ fontFamily: 'var(--font-display)', fontSize: 'clamp(1.4rem, 4vw, 1.9rem)', marginBottom: '0.5rem', lineHeight: 1.1 }}>{item[lang].title}</h3>
+                  <p style={{ color: 'var(--text-muted)', fontSize: '0.9rem', lineHeight: 1.8, maxWidth: '500px' }}>{item[lang].description}</p>
+                </div>
+                <div style={{ textAlign: 'right', display: 'flex', flexDirection: 'column', justifyContent: 'center', flexShrink: 0 }}>
+                  <span style={{ fontFamily: 'var(--font-bebas)', fontSize: '1.2rem', color: 'var(--secondary)' }}>
+                    {item.price === '0.00' ? '$' : `${item.price} ETB`}
+                  </span>
+                </div>
               </div>
-              <div style={{ textAlign: 'right', display: 'flex', flexDirection: 'column', justifyContent: 'center', flexShrink: 0 }}>
-                <span style={{ fontFamily: 'var(--font-bebas)', fontSize: '1.2rem', color: 'var(--secondary)' }}>
-                  $
-                </span>
-              </div>
-            </div>
-          ))}
+            ))
+          )}
         </div>
       </div>
 
@@ -194,15 +220,19 @@ export default function DigitalMenu() {
             style={{ maxWidth: '560px', width: '100%', textAlign: 'center' }}
             onClick={e => e.stopPropagation()}
           >
-            <div className="img-zoom-hover" style={{ position: 'relative', width: '100%', aspectRatio: '16/9', marginBottom: '2rem', boxShadow: '0 30px 70px rgba(0,0,0,0.12)' }}>
-              <Image src={selected.image} alt={selected[lang].title} fill sizes="(max-width: 768px) 100vw, 560px" style={{ objectFit: 'cover' }} />
+            <div className="img-zoom-hover" style={{ position: 'relative', width: '100%', aspectRatio: '16/9', marginBottom: '2rem', boxShadow: '0 30px 70px rgba(0,0,0,0.12)', background: '#eee' }}>
+              {selected.image && selected.image !== '/tibbs.webp' && selected.image !== '/placeholder.jpg' && (
+                <Image src={selected.image} alt={selected[lang].title} fill sizes="(max-width: 768px) 100vw, 560px" style={{ objectFit: 'cover' }} />
+              )}
             </div>
             <span className="eyebrow" style={{ fontSize: '0.65rem' }}>
-              <span className="hr-dot" />{selected.category}<span className="hr-dot" />
+              <span className="hr-dot" />{categories.find(c => c.id === selected.category)?.en || selected.category}<span className="hr-dot" />
             </span>
             <h2 style={{ fontFamily: 'var(--font-display)', fontSize: 'clamp(2rem, 8vw, 3.2rem)', marginBottom: '1rem' }}>{selected[lang].title}</h2>
             <p style={{ color: 'var(--text-muted)', marginBottom: '2rem', fontSize: '1rem', lineHeight: 1.9 }}>{selected[lang].description}</p>
-            <div style={{ fontFamily: 'var(--font-bebas)', fontSize: '1.5rem', color: 'var(--secondary)', marginBottom: '2.5rem' }}>$</div>
+            <div style={{ fontFamily: 'var(--font-bebas)', fontSize: '1.5rem', color: 'var(--secondary)', marginBottom: '2.5rem' }}>
+              {selected.price === '0.00' ? '$' : `${selected.price} ETB`}
+            </div>
             <button className="btn-primary" style={{ padding: '0.9rem 3rem' }} onClick={() => setSelected(null)}>Close</button>
           </div>
         </div>

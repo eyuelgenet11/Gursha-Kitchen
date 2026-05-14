@@ -18,6 +18,7 @@ export const menuCategories = [
   { id: 'main', en: 'Main Course', am: 'ዋና ምግብ' },
   { id: 'pasta', en: 'Pasta & Lasagna', am: 'ፓስታ እና ላዛኛ' },
   { id: 'burgers', en: 'Burgers', am: 'በርገር' },
+  { id: 'pizza', en: 'Pizza', am: 'ፒዛ' },
   { id: 'breakfast', en: 'Breakfast', am: 'ቁርስ' },
   { id: 'lunch', en: 'Traditional Lunch', am: 'ምሳ' },
 ];
@@ -155,16 +156,16 @@ export const menuData: MenuItem[] = [
     category: 'burgers',
     price: '0.00',
     image: '/beef burgur.jpg',
-    en: { title: 'Beef Burger', description: 'With lettuce, tomato, grilled onion. Side French Fries' },
-    am: { title: 'ቢፍ በርገር', description: 'ሰላጣ፣ ቲማቲም፣ የተጠበሰ ሽንኩርት። ከቺፕስ ጋር' }
+    en: { title: 'Signature Beef Burger', description: 'With lettuce, tomato, grilled onion. Side crispy fries' },
+    am: { title: 'ሲግኔቸር ቢፍ በርገር', description: 'ሰላጣ፣ ቲማቲም፣ የተጠበሰ ሽንኩርት። ከቺፕስ ጋር' }
   },
   {
     id: 'cheeseburger',
     category: 'burgers',
     price: '0.00',
     image: '/cheese burger.jpg',
-    en: { title: 'Cheeseburger', description: 'With lettuce, tomato, cheese, grilled onion. Side French Fries' },
-    am: { title: 'ቺዝ በርገር', description: 'ሰላጣ፣ ቲማቲም፣ አይብ፣ የተጠበሰ ሽንኩርት። ከቺፕስ ጋር' }
+    en: { title: 'Buegos Cheeseburger', description: 'With lettuce, tomato, cheese, grilled onion. Side crispy fries' },
+    am: { title: 'ብዌጎስ ቺዝ በርገር', description: 'ሰላጣ፣ ቲማቲም፣ አይብ፣ የተጠበሰ ሽንኩርት። ከቺፕስ ጋር' }
   },
   {
     id: 'home-special-burger',
@@ -173,6 +174,48 @@ export const menuData: MenuItem[] = [
     image: '/mitmita-burger.png',
     en: { title: 'Home Special', description: 'Our signature House Special Burger' },
     am: { title: 'ሆም ስፔሻል በርገር', description: 'የቤታችን ልዩ በርገር' }
+  },
+
+  // PIZZA
+  {
+    id: 'pizza-margarita',
+    category: 'pizza',
+    price: '0.00',
+    image: '/tibbs.webp',
+    en: { title: 'Margarita Pizza', description: 'Classic tomato and cheese' },
+    am: { title: 'ማርጋሪታ ፒዛ', description: 'ክላሲክ ቲማቲም እና አይብ' }
+  },
+  {
+    id: 'pizza-chicken',
+    category: 'pizza',
+    price: '0.00',
+    image: '/tibbs.webp',
+    en: { title: 'Chicken Pizza', description: 'Chicken and cheese' },
+    am: { title: 'የዶሮ ፒዛ', description: 'የዶሮ እና አይብ ፒዛ' }
+  },
+  {
+    id: 'pizza-tuna',
+    category: 'pizza',
+    price: '0.00',
+    image: '/tibbs.webp',
+    en: { title: 'Tuna Pizza', description: 'Tuna and cheese' },
+    am: { title: 'የቱና ፒዛ', description: 'የቱና እና አይብ ፒዛ' }
+  },
+  {
+    id: 'pizza-fasting',
+    category: 'pizza',
+    price: '0.00',
+    image: '/tibbs.webp',
+    en: { title: 'Fasting Pizza', description: 'Vegan pizza with vegetables' },
+    am: { title: 'የፆም ፒዛ', description: 'የፆም ፒዛ በአትክልት' }
+  },
+  {
+    id: 'pizza-special',
+    category: 'pizza',
+    price: '0.00',
+    image: '/tibbs.webp',
+    en: { title: 'Gursha Special Pizza', description: 'Our house special pizza' },
+    am: { title: 'ጉርሻ ልዩ ፒዛ', description: 'የቤታችን ልዩ ፒዛ' }
   },
 
   // BREAKFAST
