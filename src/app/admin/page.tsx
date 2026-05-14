@@ -12,6 +12,9 @@ export default function AdminDashboard() {
   const [categories, setCategories] = useState<{id: string, en: string, am: string}[]>([]);
   const [loading, setLoading] = useState(true);
   
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const [pinInput, setPinInput] = useState('');
+  
   const [editingItem, setEditingItem] = useState<(MenuItem & {isNew?: boolean}) | null>(null);
   const [saving, setSaving] = useState(false);
 
@@ -61,6 +64,37 @@ export default function AdminDashboard() {
 
   const baseUrl = 'https://gurshakitchen.et/digital-menu';
   const menuUrl = `${baseUrl}?table=${tableNumber}`;
+
+  if (!isAuthenticated) {
+    return (
+      <div style={{ minHeight: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center', background: 'var(--bg-main)', padding: '1rem', color: 'var(--text-main)' }}>
+        <div style={{ background: 'white', padding: '3rem', borderRadius: '1rem', boxShadow: '0 20px 40px rgba(0,0,0,0.08)', width: '100%', maxWidth: '400px', textAlign: 'center' }}>
+          <h1 style={{ fontFamily: 'var(--font-display)', fontSize: '2.5rem', marginBottom: '0.5rem' }}>Admin Access</h1>
+          <p style={{ color: 'var(--text-muted)', marginBottom: '2rem' }}>Please enter your PIN to continue.</p>
+          <input 
+            type="password" 
+            value={pinInput} 
+            onChange={e => setPinInput(e.target.value)}
+            style={{ width: '100%', padding: '1rem', fontSize: '1.5rem', textAlign: 'center', letterSpacing: '0.5rem', border: '2px solid var(--border-light)', borderRadius: '0.5rem', marginBottom: '1rem', background: 'var(--bg-light)', color: 'var(--text-main)' }}
+            placeholder="****"
+            maxLength={4}
+            onKeyDown={e => {
+              if (e.key === 'Enter') {
+                pinInput === '7576' ? setIsAuthenticated(true) : alert('Incorrect PIN');
+              }
+            }}
+          />
+          <button 
+            onClick={() => pinInput === '7576' ? setIsAuthenticated(true) : alert('Incorrect PIN')}
+            className="btn-primary" 
+            style={{ width: '100%', padding: '1rem' }}
+          >
+            Unlock
+          </button>
+        </div>
+      </div>
+    );
+  }
 
   if (loading) return <div style={{ minHeight: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center', background: 'var(--bg-main)' }}>Loading Admin...</div>;
 
