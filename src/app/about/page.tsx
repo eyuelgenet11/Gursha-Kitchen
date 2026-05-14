@@ -98,7 +98,7 @@ export default function Services() {
       {/* Catering Section */}
       <section id="catering" style={{ background: 'var(--bg-dark)', color: 'white', padding: '6rem 0' }}>
         <div className="container">
-          <div className="grid-2" style={{ gap: '4rem', alignItems: 'center' }}>
+          <div style={{ maxWidth: '800px', margin: '0 auto', textAlign: 'center' }}>
             <div>
               <span className="eyebrow" style={{ color: 'rgba(241,235,217,0.5)' }}>Catering Services</span>
               <h2 style={{ fontFamily: 'var(--font-display)', color: 'var(--bg-main)', fontSize: 'clamp(2rem, 5vw, 3rem)', marginBottom: '1.5rem', lineHeight: 1.1 }}>Bring the Gursha Experience to Your Event</h2>
@@ -135,10 +135,6 @@ export default function Services() {
                 <a href="mailto:catering@gurshakitchen.com" className="btn-primary" style={{ background: 'var(--bg-main)', color: 'var(--bg-dark)', border: 'none' }}>Email Inquiry</a>
                 <a href="tel:+251981747576" style={{ color: 'var(--accent)', fontWeight: 500, letterSpacing: '0.05em' }}>📞 +251 981 74 75 76</a>
               </div>
-            </div>
-            
-            <div style={{ position: 'relative', height: '100%', minHeight: '400px', borderRadius: '4px', overflow: 'hidden' }}>
-              <Image src="/gursha-platter.png" alt="Gursha Catering Platter" fill style={{ objectFit: 'cover' }} sizes="(max-width: 900px) 100vw, 600px" />
             </div>
           </div>
         </div>
