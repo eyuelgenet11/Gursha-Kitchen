@@ -267,17 +267,17 @@ export default function Home() {
       </section>
 
       {/* ── Footer ── */}
-      <footer style={{ background: 'var(--secondary)', color: 'white', padding: '6rem 0 3rem' }}>
+      <footer style={{ background: 'var(--secondary)', color: 'white', padding: '4rem 0 2rem' }}>
         <div className="container" style={{ textAlign: 'center' }}>
           <h2 style={{ fontFamily: 'var(--font-display)', fontSize: 'clamp(2.5rem, 6vw, 4rem)', marginBottom: '1.5rem', lineHeight: 1.1 }}>
             Come for the food.<br />Stay for the vibe.
           </h2>
-          <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center', flexWrap: 'wrap', marginBottom: '4rem' }}>
+          <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center', flexWrap: 'wrap', marginBottom: '2.5rem' }}>
             <a href="tel:+251981747576" className="btn-primary" style={{ background: 'white', color: 'var(--secondary)', border: 'none' }}>Reserve a Table</a>
             <a href="#contact" className="btn-outline" style={{ color: 'white', borderColor: 'rgba(255,255,255,0.5)' }}>Order for Delivery</a>
           </div>
 
-          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '1.5rem', borderTop: '1px solid rgba(255,255,255,0.1)', paddingTop: '2rem' }}>
+          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '1.5rem', borderTop: '1px solid rgba(255,255,255,0.1)', paddingTop: '1.5rem' }}>
             <p style={{ fontSize: '0.7rem', letterSpacing: '0.12em', textTransform: 'uppercase', opacity: 0.5 }}>
               © 2026 Gursha Kitchen. All Rights Reserved.
             </p>
