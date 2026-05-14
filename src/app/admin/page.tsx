@@ -227,18 +227,37 @@ export default function AdminDashboard() {
                 </div>
 
                 <div>
-                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.5rem' }}>
-                    <label style={{ fontSize: '0.8rem' }}>Image Path (e.g. /doro.jpg or https://...)</label>
-                    <a href="https://imgbb.com/upload" target="_blank" rel="noopener noreferrer" style={{ fontSize: '0.7rem', color: 'var(--primary)', fontWeight: 700, textDecoration: 'underline' }}>Upload image here</a>
+                  <label style={{ display: 'block', fontSize: '0.8rem', marginBottom: '0.5rem' }}>Image Path (URL)</label>
+                  <div style={{ display: 'flex', gap: '0.5rem' }}>
+                    <input 
+                      type="text" 
+                      value={editingItem.image} 
+                      onChange={e => setEditingItem({...editingItem, image: e.target.value})} 
+                      style={{ flexGrow: 1, padding: '0.75rem', border: '1px solid var(--border-light)' }} 
+                      placeholder="Paste link here..."
+                      required 
+                    />
+                    <a 
+                      href="https://imgbb.com/upload" 
+                      target="_blank" 
+                      rel="noopener noreferrer" 
+                      style={{ 
+                        display: 'flex', 
+                        alignItems: 'center', 
+                        justifyContent: 'center', 
+                        gap: '0.5rem', 
+                        padding: '0.75rem 1rem', 
+                        background: 'var(--bg-dark)', 
+                        color: 'white', 
+                        fontSize: '0.8rem', 
+                        fontWeight: 700, 
+                        textDecoration: 'none',
+                        borderRadius: '4px'
+                      }}
+                    >
+                      <span style={{ fontSize: '1.2rem' }}>+</span> Upload
+                    </a>
                   </div>
-                  <input 
-                    type="text" 
-                    value={editingItem.image} 
-                    onChange={e => setEditingItem({...editingItem, image: e.target.value})} 
-                    style={{ width: '100%', padding: '0.75rem', border: '1px solid var(--border-light)' }} 
-                    placeholder="/doro.jpg"
-                    required 
-                  />
                 </div>
 
                 <div style={{ borderTop: '1px solid var(--border-light)', paddingTop: '1rem' }}>
