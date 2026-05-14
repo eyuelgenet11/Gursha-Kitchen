@@ -227,7 +227,10 @@ export default function AdminDashboard() {
                 </div>
 
                 <div>
-                  <label style={{ display: 'block', fontSize: '0.8rem', marginBottom: '0.5rem' }}>Image Path (e.g. /doro.jpg or https://...)</label>
+                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.5rem' }}>
+                    <label style={{ fontSize: '0.8rem' }}>Image Path (e.g. /doro.jpg or https://...)</label>
+                    <a href="https://imgbb.com/upload" target="_blank" rel="noopener noreferrer" style={{ fontSize: '0.7rem', color: 'var(--primary)', fontWeight: 700, textDecoration: 'underline' }}>Upload image here</a>
+                  </div>
                   <input 
                     type="text" 
                     value={editingItem.image} 
