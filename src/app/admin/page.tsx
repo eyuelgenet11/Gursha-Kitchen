@@ -31,14 +31,20 @@ export default function AdminDashboard() {
 
   const saveMenu = async (newItems: MenuItem[]) => {
     setSaving(true);
-    await fetch('/api/menu', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ categories, items: newItems })
-    });
-    setMenuData(newItems);
-    setSaving(false);
-    setEditingItem(null);
+    try {
+      await fetch('/api/menu', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ categories, items: newItems })
+      });
+      setMenuData(newItems);
+      setEditingItem(null);
+    } catch (error) {
+      console.error("Save error:", error);
+      alert("Failed to save menu");
+    } finally {
+      setSaving(false);
+    }
   };
 
   const handleSaveItem = (e: React.FormEvent) => {
@@ -221,8 +227,15 @@ export default function AdminDashboard() {
                 </div>
 
                 <div>
-                  <label style={{ display: 'block', fontSize: '0.8rem', marginBottom: '0.5rem' }}>Image Path (e.g. /doro.jpg)</label>
-                  <input type="text" value={editingItem.image} onChange={e => setEditingItem({...editingItem, image: e.target.value})} style={{ width: '100%', padding: '0.75rem', border: '1px solid var(--border-light)' }} required />
+                  <label style={{ display: 'block', fontSize: '0.8rem', marginBottom: '0.5rem' }}>Image Path (e.g. /doro.jpg or https://...)</label>
+                  <input 
+                    type="text" 
+                    value={editingItem.image} 
+                    onChange={e => setEditingItem({...editingItem, image: e.target.value})} 
+                    style={{ width: '100%', padding: '0.75rem', border: '1px solid var(--border-light)' }} 
+                    placeholder="/doro.jpg"
+                    required 
+                  />
                 </div>
 
                 <div style={{ borderTop: '1px solid var(--border-light)', paddingTop: '1rem' }}>
