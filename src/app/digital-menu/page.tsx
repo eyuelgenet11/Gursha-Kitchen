@@ -240,8 +240,16 @@ export default function DigitalMenu() {
 
       {/* Footer */}
       <footer style={{ padding: '5rem 0 4rem', textAlign: 'center', borderTop: '1px solid var(--border-light)' }}>
-        <div style={{ marginBottom: '1.5rem' }}>
-          <Image src="/logo-02.jpg" alt="Logo" width={60} height={60} style={{ opacity: 0.18, borderRadius: '50%', filter: 'grayscale(1)', margin: '0 auto' }} />
+        <div style={{ marginBottom: '2.5rem' }}>
+          <Image src="/menu.png" alt="Branding" width={180} height={100} style={{ opacity: 1, margin: '0 auto', objectFit: 'contain' }} />
+        </div>
+        <div style={{ marginBottom: '2rem' }}>
+          <p style={{ fontFamily: 'var(--font-display)', fontSize: '1rem', marginBottom: '0.5rem' }}>Prices are inclusive of 15% VAT.</p>
+          <p style={{ color: 'var(--text-muted)', fontSize: '0.9rem' }}>📍 Around Bambis, next to Mekane-Yesus Building.</p>
+        </div>
+        <div style={{ marginBottom: '2rem' }}>
+          <p style={{ fontFamily: 'var(--font-bebas)', fontSize: '1.2rem', color: 'var(--secondary)', letterSpacing: '0.1em' }}>+251 981747576</p>
+          <p style={{ fontFamily: 'var(--font-bebas)', fontSize: '1rem', color: 'var(--primary)', letterSpacing: '0.1em' }}>@GurshaKitchen</p>
         </div>
         <p style={{ fontFamily: 'var(--font-bebas)', fontSize: '0.65rem', letterSpacing: '0.3em', textTransform: 'uppercase', opacity: 0.35 }}>Gursha Kitchen Luxury Dining</p>
       </footer>

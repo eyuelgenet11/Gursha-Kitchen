@@ -318,6 +318,11 @@ input, textarea, select {
   font-weight: 400;
   color: var(--secondary);
   letter-spacing: 0.05em;
+  transition: color var(--transition-med);
+}
+
+.nav:not(.scrolled) .nav-logo-brand {
+  color: white;
 }
 
 .nav-logo-sub {
@@ -327,6 +332,11 @@ input, textarea, select {
   letter-spacing: 0.4em;
   font-weight: 700;
   text-transform: uppercase;
+  transition: color var(--transition-med);
+}
+
+.nav:not(.scrolled) .nav-logo-sub {
+  color: var(--accent);
 }
 
 .nav-links {
@@ -342,11 +352,17 @@ input, textarea, select {
   letter-spacing: 0.12em;
   text-transform: uppercase;
   color: var(--text-main);
-  transition: color 0.2s ease;
+  transition: all var(--transition-med);
+}
+
+.nav:not(.scrolled) .nav-link {
+  color: var(--accent);
+  text-shadow: 0 2px 4px rgba(0,0,0,0.2);
 }
 
 .nav-link:hover {
   color: var(--primary);
+  transform: translateY(-2px);
 }
 
 /* Hamburger */
@@ -366,6 +382,10 @@ input, textarea, select {
   background: var(--text-main);
   transition: all 0.3s ease;
   transform-origin: center;
+}
+
+.nav:not(.scrolled) .nav-hamburger span {
+  background: var(--accent);
 }
 
 .nav-hamburger.open span:nth-child(1) {
